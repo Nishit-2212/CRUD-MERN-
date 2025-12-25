@@ -9,8 +9,8 @@ export const create = async (req, res) => {
         }
         const newUser = new Users(req.body);
         const savedData = await newUser.save();
-        res.status(201).json(savedData);
-    } catch (error) {
+        res.status(201).json({message: "User Created Successfully"});
+    } catch (error) { 
         res.status(500).json({ errorMessage: error.message });
     }
 };
